@@ -1,0 +1,6 @@
+FROM jupyter/base-notebook
+RUN pip install requests \
+&& pip install tabulate \
+&& pip install "colorama>=0.3.8" \
+&& pip install future \
+&& pip install -f http://h2o-release.s3.amazonaws.com/h2o/latest_stable_Py.html h2o

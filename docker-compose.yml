@@ -1,0 +1,39 @@
+version: "3.7"
+services:
+  jupyter-service:
+    build: 
+      context: .
+      dockerfile: Dockerfile-jupyter-h2o
+    container_name: jupyter-h2o
+    restart: always
+    depends_on: 
+      - h2o-service
+    ports:
+      - "8888:8888"
+    networks:
+      - h2o-network
+    volumes:
+      - .:/home/jovyan/work
+
+  h2o-service:
+    build: 
+      context: .
+      dockerfile: Dockerfile-h2o
+    container_name: h2o
+    restart: always
+    ports:
+      - "54321:54321"
+      - "54322:54322"
+    networks:
+      - h2o-network
+    volumes:
+      - .:/home/jovyan/work
+    entrypoint:
+      - java 
+      - -Xmx8g 
+      - -jar 
+      - h2o-3.32.0.4/h2o.jar
+
+networks:
+  h2o-network: 
+    name: h2o-network
