@@ -1,12 +1,12 @@
 ### H2O AutoML example
 
 
-#### Use docker-compose file to run a H2O container(standalone service) and a jupyter container that can connect to it.
+Use docker-compose to run a H2O container(standalone service) and a jupyter container that can connect to it:
 ```
 docker-compose up -d 
 ```
 
-Copy the jupyter url into your browser from cmd output.
+Copy the jupyter url into your browser (from bellow cmd output):
 ```
 docker logs jupyter-h2o
 ```
