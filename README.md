@@ -1,5 +1,4 @@
-### H2O examples ([AutoML example](https://github.com/adavarski/h2o-jupyter-automl-docker/blob/main/h2o-AutoML-example.ipynb), [H2O course on Coursera: notebooks](https://github.com/adavarski/h2o-jupyter-automl-docker/tree/main/notebooks))
-
+### H2O examples 
 
 Use docker-compose to run a H2O container(standalone service) and a jupyter container that can connect to it:
 ```
