@@ -1,4 +1,4 @@
-### H2O examples 
+### H2O + Jupyter notebooks examples 
 
 Use docker-compose to run a H2O container(standalone service) and a jupyter container that can connect to it:
 ```
