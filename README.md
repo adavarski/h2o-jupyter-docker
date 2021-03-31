@@ -12,7 +12,7 @@ docker logs jupyter-h2o
 
 Run test notebook contains an H2O example ([AutoML example](https://github.com/adavarski/h2o-jupyter-automl-docker/blob/main/h2o-AutoML-example.ipynb), [H2O course on Coursera: notebooks](https://github.com/adavarski/h2o-jupyter-automl-docker/tree/main/notebooks)).
 
-Note: You can go to http://localhost:54321 in order to use H2O FLOW.
+Note: You can go to http://localhost:54321 in order to use H2O Flow (H2O Flow is an open-source user interface for H2O. It is a web-based interactive environment that allows you to combine code execution, text, mathematics, plots, and rich media in a single document.)
 
 Clean:
 ```
