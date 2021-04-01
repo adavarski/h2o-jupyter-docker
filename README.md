@@ -71,7 +71,7 @@ $ kubectl logs jupyter-notebook
         http://(jupyter-notebook or 127.0.0.1):8888/?token=1efac938a73ef297729290af9b301e92755f5ffd7c72bbf8
 ```
 
-Port-forward the jypyter-notebook Pod with the following command: kubectl port-forward jupyter-notebook 8888:8888 
+Port-forward the jypyter-notebook with the following command: `kubectl port-forward jupyter-notebook 8888:8888` 
 Browse to http://localhost:8888/?token=1efac938a73ef297729290af9b301e92755f5ffd7c72bbf8 
 
 Note: Jupyter Notebooks are a browser-based (or web-based) IDE (integrated development environments)
