@@ -40,8 +40,7 @@ Run Jupyter Notebook inside k8s as pod:
 ```
 $ cd ./k8s/k8s-jupyterlab
 $ sudo k3s crictl pull davarski/jupyterlab-h2o:latest
-$ kubectl apply -f jupyter-notebook.pod.yaml -f jupyter-notebook.svc.yaml -f jupyter-notebook.ingress.yaml
-
+$ kubectl apply -f jupyter-notebook.pod.yaml -f jupyter-notebook.svc.yaml 
 ```
 Once the Pod is running, copy the generated token from the pod output logs.
 ```
@@ -76,7 +75,6 @@ Note: Jupyter Notebooks are a browser-based (or web-based) IDE (integrated devel
 ```
 kubectl apply -f ./k8s/k8s-h2o/40-h2o-statefulset.yaml
 kubectl apply -f ./k8s/k8s-h2o50-h2o-headless-service.yaml
-kubectl apply -f ./k8s/k8s-h2o60-h2o-ingress.yaml
 ```
 
 Example H2O AutoML jupyter notebook: https://github.com/adavarski/h2o-jupyter-docker/blob/main/k8s/notebooks/h2o-automl.ipynb
