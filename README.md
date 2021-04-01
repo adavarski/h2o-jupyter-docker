@@ -21,11 +21,18 @@ docker-compose down
 #### Use k8s to run H2O cluster and a jupyter container that can connect to it.
 
 Install k3s
+
 k3s is "Easy to install. A binary of less than 40 MB. Only 512 MB of RAM required to run." this allows us to utilized Kubernetes for managing the Gitlab application container on a single node while limited the footprint of Kubernetes itself.
 ```
 $ curl -sfL https://get.k3s.io | sh -
 $ sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/k3s-config
 $ export KUBECONFIG=~/.kube/k3s-config
+```
+
+Deploy H2O cluster
+```
+kubectl apply -f ./k8s/k8s-h2o/40-h2o-statefulset.yaml
+kubectl apply -f ./k8s/k8s-h2o50-h2o-headless-service.yaml
 ```
 Build custom JupyterLab docker image and pushing it into DockerHub container registry.
 ```
@@ -67,18 +74,9 @@ $ kubectl logs jupyter-notebook
 Port-forward the jypyter-notebook Pod with the following command: kubectl port-forward jupyter-notebook 8888:8888 
 Browse to http://localhost:8888/?token=1efac938a73ef297729290af9b301e92755f5ffd7c72bbf8 
 
-
 Note: Jupyter Notebooks are a browser-based (or web-based) IDE (integrated development environments)
 
-
-### Deploy H2O cluster
-```
-kubectl apply -f ./k8s/k8s-h2o/40-h2o-statefulset.yaml
-kubectl apply -f ./k8s/k8s-h2o50-h2o-headless-service.yaml
-```
-
 Example H2O AutoML jupyter notebook: https://github.com/adavarski/h2o-jupyter-docker/blob/main/k8s/notebooks/h2o-automl.ipynb
-
 
 [Coursera-examples](https://github.com/adavarski/h2o-jupyter-docker/tree/main/notebooks)
 
