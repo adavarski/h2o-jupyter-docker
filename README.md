@@ -71,9 +71,9 @@ Note: Jupyter Notebooks are a browser-based (or web-based) IDE (integrated devel
 
 ### Deploy H2O cluster
 ```
-kubectl apply -f ../003-data/50000-h2o/40-h2o-statefulset.yaml
-kubectl apply -f ../003-data/50000-h2o/50-h2o-headless-service.yaml
-kubectl apply -f ../003-data//50000-h2o/60-h2o-ingress.yaml
+kubectl apply -f ./k8s/k8s-h2o/40-h2o-statefulset.yaml
+kubectl apply -f ./k8s/k8s-h2o50-h2o-headless-service.yaml
+kubectl apply -f ./k8s/k8s-h2o60-h2o-ingress.yaml
 ```
 
 Example H2O AutoML jupyter notebook: https://github.com/adavarski/h2o-jupyter-docker/blob/main/k8s/notebooks/h2o-automl.ipynb
