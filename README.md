@@ -79,5 +79,5 @@ kubectl apply -f ./k8s/k8s-h2o60-h2o-ingress.yaml
 Example H2O AutoML jupyter notebook: https://github.com/adavarski/h2o-jupyter-docker/blob/main/k8s/notebooks/h2o-automl.ipynb
 
 
-[Coursera-examples](https://github.com/adavarski/k8s-UAP/tree/main/k8s/Demo9-H2O-ML/notebooks/Coursera-examples)
+[Coursera-examples](https://github.com/adavarski/h2o-jupyter-docker/tree/main/notebooks)
 
