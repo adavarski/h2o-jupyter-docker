@@ -29,7 +29,7 @@ $ export KUBECONFIG=~/.kube/k3s-config
 ```
 Build custom JupyterLab docker image and pushing it into DockerHub container registry.
 ```
-$ cd ./jupyterlab
+$ cd ./k8s/h2o-Dockerfile/
 $ docker build -t jupyterlab-h2o .
 $ docker tag jupyterlab-h2o:latest davarski/jupyterlab-h2o:latest
 $ docker login 
@@ -38,7 +38,7 @@ $ docker push davarski/jupyterlab-h2o:latest
 ```
 Run Jupyter Notebook inside k8s as pod:
 ```
-$ cd ./k8s/
+$ cd ./k8s/k8s-jupyterlab
 $ sudo k3s crictl pull davarski/jupyterlab-h2o:latest
 $ kubectl apply -f jupyter-notebook.pod.yaml -f jupyter-notebook.svc.yaml -f jupyter-notebook.ingress.yaml
 
@@ -64,7 +64,7 @@ $ kubectl logs jupyter-notebook
     Or copy and paste one of these URLs:
         http://(jupyter-notebook or 127.0.0.1):8888/?token=1efac938a73ef297729290af9b301e92755f5ffd7c72bbf8
 ```
-Browse to http://jupyter.data.davar.com/lab 
+Browse to http://127.0.0.1:8888/?token=1efac938a73ef297729290af9b301e92755f5ffd7c72bbf8 
 
 Note: Jupyter Notebooks are a browser-based (or web-based) IDE (integrated development environments)
 
@@ -76,7 +76,7 @@ kubectl apply -f ../003-data/50000-h2o/50-h2o-headless-service.yaml
 kubectl apply -f ../003-data//50000-h2o/60-h2o-ingress.yaml
 ```
 
-Example H2O AutoML jupyter notebook: https://github.com/adavarski/k8s-UAP/blob/main/k8s/Demo9-H2O-ML/notebooks/h2o-automl.ipynb (based on: https://github.com/adavarski/k8s-UAP/blob/main/k8s/Demo9-H2O-ML/notebooks/Coursera-examples/h2o-AutoML-example.ipynb)
+Example H2O AutoML jupyter notebook: https://github.com/adavarski/h2o-jupyter-docker/blob/main/k8s/notebooks/h2o-automl.ipynb
 
 
 [Coursera-examples](https://github.com/adavarski/k8s-UAP/tree/main/k8s/Demo9-H2O-ML/notebooks/Coursera-examples)
